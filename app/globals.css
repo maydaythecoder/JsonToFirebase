@@ -2,20 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-page: #d6d6d6;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --shadow-dark: rgba(0, 0, 0, 0.5);
+
+    --bg-card: #e1e1e1;
+    --bg-card-firebase: #f9fafc;
+    --bg-card-dynamo: #eef2f7;
+    --bg-card-cosmo: #f1f1f1;
+
+    --text-foreground: #2b2a35;
+    --text-foreground-firebase: #212121;
+    --text-foreground-dynamo: #232f3e;
+    --text-foreground-cosmo: #005ea6;
+
+    --primary: #636363;
+    --primary-firebase: #ffa000;
+    --primary-dynamo: #ff9900;
+    --primary-cosmo: #0078d4;
+
+    --primary-foreground: #ffffff;
+    --primary-foreground-firebase: #ffffff;
+    --primary-foreground-dynamo: #ffffff;
+    --primary-foreground-cosmo: #ffffff;
+
+    --secondary: #bdc7cb;
+    --secondary-firebase: #e1f5fe;
+    --secondary-dynamo: #f7fafc;
+    --secondary-cosmo: #eff6fc;
+
+    --secondary-foreground: #179ce4;
+    --secondary-foreground-firebase: #0288d1;
+    --secondary-foreground-dynamo: #5a5a5a;
+    --secondary-foreground-cosmo: #005ea6;
+
+    --border: #aaaeaf;
+    --border-firebase: #cfd8dc;
+    --border-dynamo: #d1d5db;
+    --border-cosmo: #d1d5db;
+  }
+
+  .dark {
+    --bg-page: #262728;
+    --shadow-light: rgba(255, 255, 255, 0.1);
+    --shadow-medium: rgba(255, 255, 255, 0.3);
+    --shadow-dark: rgba(255, 255, 255, 0.5);
+
+    --bg-card-firebase: #1e1e1e;
+    --bg-card-dynamo: #232f3e;
+    --bg-card-cosmo: #1b1c1d;
+
+    --text-foreground-firebase: #f5f5f5;
+    --text-foreground-dynamo: #e5e7eb;
+    --text-foreground-cosmo: #a4c3f7;
+
+    --primary: #a09d9d;
+    --primary-firebase: #ffca28;
+    --primary-dynamo: #ffba5a;
+    --primary-cosmo: #008ad7;
+
+    --primary-foreground-firebase: #000000;
+    --primary-foreground-dynamo: #232f3e;
+    --primary-foreground-cosmo: #ffffff;
+
+    --secondary-firebase: #4fc3f7;
+    --secondary-dynamo: #374151;
+    --secondary-cosmo: #2d4c80;
+
+    --secondary-foreground-firebase: #e1f5fe;
+    --secondary-foreground-dynamo: #ffffff;
+    --secondary-foreground-cosmo: #a4c3f7;
+
+    --border-firebase: #37474f;
+    --border-dynamo: #4b5563;
+    --border-cosmo: #374151;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .shadow-light {
+    box-shadow: var(--shadow-light);
+  }
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  .shadow-dark {
+    box-shadow: var(--shadow-dark);
+  }
+
+  .bg-page {
+    background-color: var(--bg-page);
+  }
+
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+
+  .text-foreground {
+    color: var(--text-foreground);
+  }
+
+  .primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+  }
+
+  .border-default {
+    border-color: var(--border);
+  }
 }
