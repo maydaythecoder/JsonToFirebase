@@ -1,1 +1,12 @@
-declare module "@heroicons/react/solid" 
+declare global {
+    interface ConversionRequest {
+      data: string;
+      format: string;
+    }
+  
+    interface ApiGenerationRequest {
+      data: string;
+      language: string;
+    }
+  }
+  
